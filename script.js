@@ -1,7 +1,7 @@
 (function() {
 
 	var scriptContent = function() {
-		function check() {
+		(function check() {
 			var notifier = window.Notifier;
 			if (notifier && notifier.lcSend) {
 				var originalLcSend = notifier.lcSend;
@@ -13,8 +13,7 @@
 			} else {
 				setTimeout(check, 300);
 			}
-		}
-		check();
+		})();
 	};
 
 	var script = document.createElement('script');
